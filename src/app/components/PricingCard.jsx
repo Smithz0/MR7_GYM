@@ -3,7 +3,7 @@ import Button from './Button';
 export default function PricingCard({ name, price, period = '/month', features, popular = false, ctaText = 'Get Started' }) {
   return (
     <div
-      className={`relative rounded-lg p-8 transition-all duration-300 card-hover ${
+      className={`relative rounded-lg p-6 sm:p-8 transition-all duration-300 card-hover ${
         popular
           ? 'bg-black-card border-2 border-gold gold-glow'
           : 'bg-black-card border border-gray-700 hover:border-gold/40'
@@ -22,7 +22,7 @@ export default function PricingCard({ name, price, period = '/month', features, 
           {name}
         </h3>
         <div className="flex items-baseline justify-center gap-1">
-          <span className="text-5xl font-extrabold text-white">${price}</span>
+          <span className="text-4xl sm:text-5xl font-extrabold text-white">₹{price}</span>
           <span className="text-gray-400 text-sm">{period}</span>
         </div>
       </div>

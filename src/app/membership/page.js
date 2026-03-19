@@ -9,7 +9,7 @@ import Button from '../components/Button';
 const plans = [
   {
     name: 'Basic',
-    price: 29,
+    price: '2,000',
     features: [
       'Full Gym Floor Access',
       'Standard Equipment Usage',
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: 59,
+    price: '3,000',
     features: [
       'Everything in Basic',
       'Unlimited Group Classes',
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: 'Elite',
-    price: 99,
+    price: '5,000',
     features: [
       'Everything in Pro',
       'Personal Trainer (4 sessions/mo)',
@@ -99,7 +99,7 @@ export default function MembershipPage() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative overflow-hidden bg-black-deep" style={{ paddingTop: '200px', paddingBottom: '80px' }}>
+      <section className="relative overflow-hidden bg-black-deep page-hero">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.15),transparent_60%)]" />
         </div>
@@ -107,7 +107,7 @@ export default function MembershipPage() {
           <p className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4">
             Membership
           </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
             Find Your Perfect Plan
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -118,9 +118,9 @@ export default function MembershipPage() {
       </section>
 
       {/* ═══════════ PRICING CARDS ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <ScrollReveal key={plan.name} delay={index * 150}>
                 <PricingCard {...plan} />
@@ -131,7 +131,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ═══════════ COMPARISON TABLE ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -141,8 +141,8 @@ export default function MembershipPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="max-w-4xl mx-auto overflow-x-auto">
-              <table className="w-full">
+            <div className="max-w-4xl mx-auto table-scroll-wrapper">
+              <table className="w-full" style={{ minWidth: '500px' }}>
                 <thead>
                   <tr className="border-b border-gray-700">
                     <th className="text-left py-4 px-4 text-gray-400 font-medium text-sm uppercase tracking-wider">
@@ -187,9 +187,9 @@ export default function MembershipPage() {
                 <tfoot>
                   <tr className="border-t border-gray-700">
                     <td className="py-6 px-4 text-gray-400 font-semibold text-sm">Monthly Price</td>
-                    <td className="text-center py-6 px-4 text-white font-bold text-lg">$29</td>
-                    <td className="text-center py-6 px-4 text-gold font-bold text-lg">$59</td>
-                    <td className="text-center py-6 px-4 text-white font-bold text-lg">$99</td>
+                    <td className="text-center py-6 px-4 text-white font-bold text-lg">₹2,000</td>
+                    <td className="text-center py-6 px-4 text-gold font-bold text-lg">₹3,000</td>
+                    <td className="text-center py-6 px-4 text-white font-bold text-lg">₹5,000</td>
                   </tr>
                 </tfoot>
               </table>
@@ -199,7 +199,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ═══════════ FAQ ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -244,7 +244,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ═══════════ CTA ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">

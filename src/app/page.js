@@ -46,19 +46,19 @@ const features = [
 const plans = [
   {
     name: 'Basic',
-    price: 29,
+    price: '2,000',
     features: ['Gym Floor Access', 'Locker Room', 'Standard Equipment', 'Free WiFi'],
     popular: false,
   },
   {
     name: 'Pro',
-    price: 59,
+    price: '3,000',
     features: ['Everything in Basic', 'Group Classes', 'Sauna & Steam', 'Nutrition Guide', 'Progress Tracking'],
     popular: true,
   },
   {
     name: 'Elite',
-    price: 99,
+    price: '5,000',
     features: ['Everything in Pro', 'Personal Trainer', 'VIP Lounge', 'Meal Planning', 'Priority Booking', '24/7 Access'],
     popular: false,
   },
@@ -112,12 +112,12 @@ export default function HomePage() {
             <p className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-6">
               Premium Fitness Experience
             </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6 tracking-tight">
               Transform Your Body.
               <br />
               <span className="gold-gradient-text">Build Your Strength.</span>
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
               Where ambition meets excellence. Experience world-class equipment,
               elite trainers, and a community that pushes boundaries.
             </p>
@@ -141,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ FEATURES SECTION ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -150,10 +150,10 @@ export default function HomePage() {
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <ScrollReveal key={feature.title} delay={index * 100}>
-                <div className="bg-black-card border border-gray-700 rounded-lg p-8 text-center card-hover hover:border-gold/40 h-full">
+                <div className="bg-black-card border border-gray-700 rounded-lg p-6 sm:p-8 text-center card-hover hover:border-gold/40 h-full">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 text-gold mb-6">
                     {feature.icon}
                   </div>
@@ -167,15 +167,15 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ ABOUT PREVIEW ═══════════ */}
-      <section className="pt-24 pb-32 bg-black-elevated overflow-hidden">
+      <section className="pt-14 pb-16 sm:pt-18 sm:pb-24 md:pt-24 md:pb-32 bg-black-elevated overflow-hidden">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <ScrollReveal>
               <div className="relative">
                 <img
                   src="/images/about.png"
                   alt="MR7 Fitness Interior"
-                  className="w-full h-[450px] object-cover rounded-lg"
+                  className="w-full h-[280px] sm:h-[350px] md:h-[450px] object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 right-4 bg-gold text-black-deep p-5 rounded-lg hidden md:block">
                   <p className="text-3xl font-extrabold">10+</p>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 <p className="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">
                   About MR7 Fitness
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   More Than a Gym —<br />A Lifestyle Destination
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-6">
@@ -213,18 +213,17 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ STATS BAR ═══════════ */}
-      <section className="py-16 bg-black-deep border-y border-gray-800">
+      <section className="py-10 sm:py-12 md:py-16 bg-black-deep border-y border-gray-800">
         <div className="container-custom">
           <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 text-center">
               {[
-                { number: '5000+', label: 'Active Members' },
-                { number: '50+', label: 'Expert Trainers' },
-                { number: '120+', label: 'Weekly Classes' },
+                { number: '200+', label: 'Active Members' },
+                { number: '10+', label: 'Expert Trainers' },
                 { number: '10+', label: 'Years Experience' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl md:text-4xl font-extrabold gold-gradient-text mb-2">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold gold-gradient-text mb-1 sm:mb-2">
                     {stat.number}
                   </p>
                   <p className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</p>
@@ -236,7 +235,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ MEMBERSHIP PREVIEW ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -245,7 +244,7 @@ export default function HomePage() {
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <ScrollReveal key={plan.name} delay={index * 150}>
                 <PricingCard {...plan} />
@@ -256,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ TESTIMONIALS ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -265,7 +264,7 @@ export default function HomePage() {
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {testimonials.map((testimonial, index) => (
               <ScrollReveal key={testimonial.name} delay={index * 100}>
                 <TestimonialCard {...testimonial} />
@@ -276,7 +275,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ FINAL CTA ═══════════ */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/hero.png"
@@ -291,7 +290,7 @@ export default function HomePage() {
             <p className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4">
               Your Journey Starts Here
             </p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight">
               Start Your Fitness Journey Today
             </h2>
             <p className="text-gray-300 text-lg max-w-xl mx-auto mb-10">

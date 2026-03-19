@@ -216,7 +216,13 @@ h1, h2, h3, h4, h5, h6 {
 .container-custom {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -228,5 +234,55 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .container-custom {
     padding: 0 4rem;
+  }
+}
+
+/* ── Page Hero (inner pages) ── */
+.page-hero {
+  padding-top: 140px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 640px) {
+  .page-hero {
+    padding-top: 160px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-hero {
+    padding-top: 180px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-hero {
+    padding-top: 200px;
+    padding-bottom: 80px;
+  }
+}
+
+/* ── Mobile table scroll hint ── */
+.table-scroll-wrapper {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 2px;
+}
+
+/* ── Mobile map height ── */
+@media (max-width: 639px) {
+  .map-responsive {
+    height: 280px !important;
   }
 }

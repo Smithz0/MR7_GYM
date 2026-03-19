@@ -44,8 +44,14 @@ export default function ContactPage() {
       return;
     }
     setSubmitting(true);
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Build WhatsApp message
+    const whatsappMessage = `*New Inquiry from MR7 Fitness Website*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Message:* ${encodeURIComponent(formData.message)}`;
+    const whatsappUrl = `https://wa.me/918138886201?text=${whatsappMessage}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+
     setSubmitting(false);
     setSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
@@ -60,7 +66,7 @@ export default function ContactPage() {
         </svg>
       ),
       label: 'Visit Us',
-      value: '123 Fitness Avenue, Downtown, NY 10001',
+      value: '45, Govindan Rd, Panneerselvam Nagar, West Mambalam, Chennai, Tamil Nadu 600033',
       href: null,
     },
     {
@@ -70,8 +76,8 @@ export default function ContactPage() {
         </svg>
       ),
       label: 'Call Us',
-      value: '+1 (234) 567-8900',
-      href: 'tel:+12345678900',
+      value: '+91 81388 86201',
+      href: 'tel:+918138886201',
     },
     {
       icon: (
@@ -98,7 +104,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative overflow-hidden bg-black-deep" style={{ paddingTop: '200px', paddingBottom: '80px' }}>
+      <section className="relative overflow-hidden bg-black-deep page-hero">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(212,175,55,0.15),transparent_60%)]" />
         </div>
@@ -106,7 +112,7 @@ export default function ContactPage() {
           <p className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4">
             Get In Touch
           </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
             Contact Us
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -117,13 +123,13 @@ export default function ContactPage() {
       </section>
 
       {/* ═══════════ CONTACT FORM + INFO ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <div className="bg-black-card border border-gray-700 rounded-lg p-8 md:p-10">
+                <div className="bg-black-card border border-gray-700 rounded-lg p-6 sm:p-8 md:p-10">
                   <h2 className="text-2xl font-bold text-white mb-2">Send Us a Message</h2>
                   <p className="text-gray-400 mb-8">Fill out the form and we&apos;ll get back to you within 24 hours.</p>
 
@@ -294,7 +300,7 @@ export default function ContactPage() {
       </section>
 
       {/* ═══════════ MAP ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -306,9 +312,10 @@ export default function ContactPage() {
           <ScrollReveal delay={200}>
             <div className="relative rounded-lg overflow-hidden border border-gray-700">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291865!2d-73.99!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTknMjQuMCJX!5e0!3m2!1sen!2sus!4v1618309849007!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8968!2d80.2259!3d13.0382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267e4e0f0b9c7%3A0x5e6e3c6f5e6e3c6f!2s45%2C%20Govindan%20Rd%2C%20Panneerselvam%20Nagar%2C%20West%20Mambalam%2C%20Chennai%2C%20Tamil%20Nadu%20600033!5e0!3m2!1sen!2sin!4v1618309849007!5m2!1sen!2sin"
                 width="100%"
                 height="450"
+                className="map-responsive"
                 style={{ border: 0, filter: 'grayscale(80%) invert(92%) contrast(83%)' }}
                 allowFullScreen=""
                 loading="lazy"

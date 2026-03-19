@@ -72,7 +72,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ═══════════ HERO BANNER ═══════════ */}
-      <section className="relative overflow-hidden" style={{ paddingTop: '200px', paddingBottom: '80px' }}>
+      <section className="relative overflow-hidden page-hero">
         <div className="absolute inset-0">
           <img
             src="/images/about.png"
@@ -85,22 +85,22 @@ export default function AboutPage() {
           <p className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4">
             Our Story
           </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight">
             About MR7 Fitness
           </h1>
         </div>
       </section>
 
       {/* ═══════════ MISSION ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <ScrollReveal>
               <div>
                 <p className="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">
                   Our Mission
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   Redefining What a Gym Can Be
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-6">
@@ -128,9 +128,9 @@ export default function AboutPage() {
                 <img
                   src="/images/gallery-1.png"
                   alt="Weight Room"
-                  className="w-full h-[500px] object-cover rounded-lg"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-lg"
                 />
-                <div className="absolute inset-0 border-2 border-gold/20 rounded-lg translate-x-4 translate-y-4" style={{zIndex: -1}} />
+                <div className="absolute inset-0 border-2 border-gold/20 rounded-lg translate-x-2 translate-y-2 sm:translate-x-4 sm:translate-y-4 hidden sm:block" style={{zIndex: -1}} />
               </div>
             </ScrollReveal>
           </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════ VISION & VALUES ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -164,7 +164,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════ TRAINERS ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -173,7 +173,7 @@ export default function AboutPage() {
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             {trainers.map((trainer, index) => (
               <ScrollReveal key={trainer.name} delay={index * 150}>
                 <TrainerCard {...trainer} />
@@ -184,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════ GALLERY ═══════════ */}
-      <section className="py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -194,7 +194,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {[
                 { src: '/images/gallery-1.png', alt: 'Weight Room', span: 'lg:col-span-2' },
                 { src: '/images/gallery-2.png', alt: 'Cardio Zone', span: '' },
@@ -208,7 +208,7 @@ export default function AboutPage() {
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-64 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 sm:h-64 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black-deep/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <p className="text-white font-semibold text-lg">{img.alt}</p>
@@ -221,7 +221,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════ CTA ═══════════ */}
-      <section className="py-24 bg-black-deep">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">

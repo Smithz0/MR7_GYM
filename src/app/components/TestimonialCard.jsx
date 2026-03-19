@@ -1,6 +1,6 @@
 export default function TestimonialCard({ name, rating, quote, role = 'Member' }) {
   return (
-    <div className="bg-black-card border border-gray-700 rounded-lg p-8 card-hover hover:border-gold/40">
+    <div className="bg-black-card border border-gray-700 rounded-lg p-6 sm:p-8 card-hover hover:border-gold/40">
       {/* Stars */}
       <div className="flex gap-1 mb-5">
         {Array.from({ length: 5 }, (_, i) => (
