@@ -21,22 +21,23 @@ export default function Footer() {
       <div className="h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="container-custom py-10 sm:py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="inline-block mb-6">
+        {/* Top section: Brand + Links */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+          {/* Brand — takes more space on desktop */}
+          <div className="md:col-span-4 lg:col-span-4">
+            <Link href="/" className="inline-block mb-5">
               <img
                 src="/images/logo.png"
                 alt="MR7 Fitness"
-                className="h-16 w-auto"
+                className="h-14 w-auto"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Premium fitness experience designed for those who demand excellence.
               Transform your body, elevate your mind.
             </p>
             {/* Social Icons */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {[
                 {
                   name: 'Instagram',
@@ -59,7 +60,7 @@ export default function Footer() {
                   key={social.name}
                   href="#"
                   aria-label={social.name}
-                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={social.path} />
@@ -69,82 +70,89 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gold transition-colors duration-300 text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Links columns — evenly distributed */}
+          <div className="md:col-span-8 lg:col-span-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">
+                  Quick Links
+                </h4>
+                <ul className="space-y-2.5">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-400 hover:text-gold transition-colors duration-300 text-sm"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Programs */}
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
-              Programs
-            </h4>
-            <ul className="space-y-3">
-              {programs.map((program) => (
-                <li key={program}>
-                  <span className="text-gray-400 text-sm">{program}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {/* Programs */}
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">
+                  Programs
+                </h4>
+                <ul className="space-y-2.5">
+                  {programs.map((program) => (
+                    <li key={program}>
+                      <span className="text-gray-400 text-sm">{program}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
-              Contact Us
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                </svg>
-                <span className="text-gray-400 text-sm">45, Govindan Rd, Panneerselvam Nagar, West Mambalam, Chennai, Tamil Nadu 600033</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                </svg>
-                <a href="tel:+918138886201" className="text-gray-400 text-sm hover:text-gold transition-colors duration-300">
-                  +91 81388 86201
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                </svg>
-                <a href="mailto:info@mr7fitness.com" className="text-gray-400 text-sm hover:text-gold transition-colors duration-300">
-                  info@mr7fitness.com
-                </a>
-              </li>
-            </ul>
+              {/* Contact */}
+              <div className="col-span-2 sm:col-span-1">
+                <h4 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">
+                  Contact Us
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=MR7+UNISEX+FITNESS+45,+Govindan+Rd,+Panneerselvam+Nagar,+West+Mambalam,+Chennai,+Tamil+Nadu+600033" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-sm leading-relaxed hover:text-gold transition-colors duration-300">
+                      45, Govindan Rd, Panneerselvam Nagar, West Mambalam, Chennai, Tamil Nadu 600033
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                    <a href="tel:+918138886201" className="text-gray-400 text-sm hover:text-gold transition-colors duration-300">
+                      +91 81388 86201
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+                    <a href="mailto:info@mr7fitness.com" className="text-gray-400 text-sm hover:text-gold transition-colors duration-300">
+                      info@mr7fitness.com
+                    </a>
+                  </li>
+                </ul>
 
-            {/* Hours */}
-            <div className="mt-6 pt-6 border-t border-gray-800">
-              <p className="text-sm text-gray-400">
-                <span className="text-white font-medium">Hours:</span> Mon-Fri 5AM-11PM
-              </p>
-              <p className="text-sm text-gray-400">Sat-Sun 7AM-9PM</p>
+                {/* Hours */}
+                <div className="mt-4 pt-4 border-t border-gray-800">
+                  <p className="text-sm text-gray-400">
+                    <span className="text-white font-medium">Hours:</span> Mon-Fri 5AM-11PM
+                  </p>
+                  <p className="text-sm text-gray-400">Sat-Sun 7AM-9PM</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-800 mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} MR7 Fitness. All rights reserved.
           </p>

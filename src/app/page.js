@@ -1,8 +1,11 @@
 import ScrollReveal from './components/ScrollReveal';
 import SectionHeader from './components/SectionHeader';
 import PricingCard from './components/PricingCard';
-import TestimonialCard from './components/TestimonialCard';
+import TestimonialCarousel from './components/TestimonialCarousel';
 import Button from './components/Button';
+import AnimatedCounter from './components/AnimatedCounter';
+import BMICalculator from './components/BMICalculator';
+import TransformationSlider from './components/TransformationSlider';
 
 const features = [
   {
@@ -66,29 +69,53 @@ const plans = [
 
 const testimonials = [
   {
-    name: 'Sarah Mitchell',
+    name: "Marutha Renganathan",
     rating: 5,
-    quote: 'MR7 Fitness completely transformed my approach to health. The trainers are world-class, and the equipment is always in perfect condition. Best gym I\'ve ever been to.',
-    role: 'Member since 2023',
+    tag: "Motivating Environment",
+    review: "Great experience at MR7 Fitness. The gym is clean, well-equipped, and highly motivating. Sujith Master is knowledgeable and always pushes you to achieve your best."
   },
   {
-    name: 'James Rodriguez',
+    name: "Sridhayaa A S",
     rating: 5,
-    quote: 'The atmosphere is unmatched. Every visit feels like stepping into a premium fitness sanctuary. The personal coaching program helped me lose 30 lbs in 4 months.',
-    role: 'Pro Member',
+    tag: "Weight Loss Transformation",
+    review: "Been a member for six months and had an amazing experience. Structured workouts and proper guidance helped me achieve significant weight loss."
   },
   {
-    name: 'Emily Chen',
+    name: "Ranjani Balaji",
     rating: 5,
-    quote: 'I\'ve tried many gyms over the years, but MR7 stands out with its attention to detail and incredible community. The group classes are engaging and challenging.',
-    role: 'Elite Member',
+    tag: "Visible Results",
+    review: "Coming here for 8 months and seeing clear inch and weight loss. Trainers are motivating, and the gym is affordable with quality equipment."
   },
   {
-    name: 'Michael Thompson',
-    rating: 4,
-    quote: 'From the moment you walk in, you feel motivated. The gold standard of fitness facilities. My strength has increased dramatically since joining.',
-    role: 'Member since 2024',
+    name: "Pragadeesh Vel",
+    rating: 5,
+    tag: "Supportive Trainer",
+    review: "Perfect place for fitness. The trainer is supportive, knowledgeable, and always encourages pushing limits."
   },
+  {
+    name: "Narendra Varma",
+    rating: 5,
+    tag: "Personalized Training",
+    review: "Trainers provide personal attention based on individual goals. Plenty of equipment for complete body development."
+  },
+  {
+    name: "Vignesh Ganesan",
+    rating: 5,
+    tag: "Clean & Friendly",
+    review: "Clean and well-maintained gym with very friendly trainers. Workouts are tailored and ensure proper form."
+  },
+  {
+    name: "Mani Kandan",
+    rating: 5,
+    tag: "Fast Transformation",
+    review: "Lost around 9kg in 3 months with proper guidance and structured training. Highly effective coaching."
+  },
+  {
+    name: "Ayub MD",
+    rating: 5,
+    tag: "Great Atmosphere",
+    review: "Love working out here! Great vibe, friendly people, and well-maintained equipment. My go-to fitness place."
+  }
 ];
 
 export default function HomePage() {
@@ -218,19 +245,55 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 text-center">
               {[
-                { number: '200+', label: 'Active Members' },
-                { number: '10+', label: 'Expert Trainers' },
-                { number: '10+', label: 'Years Experience' },
+                { target: 200, label: 'Active Members' },
+                { target: 10, label: 'Expert Trainers' },
+                { target: 10, label: 'Years Experience' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold gold-gradient-text mb-1 sm:mb-2">
-                    {stat.number}
+                    <AnimatedCounter target={stat.target} suffix="+" />
                   </p>
                   <p className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══════════ BMI CALCULATOR ═══════════ */}
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated border-b border-gray-800">
+        <div className="container-custom">
+          <ScrollReveal>
+            <SectionHeader
+              title="Know Your Metrics"
+              subtitle="Use our tools to calculate your Body Mass Index and understand where your fitness journey begins."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
+            <BMICalculator />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══════════ TRANSFORMATIONS ═══════════ */}
+      <section className="py-14 sm:py-18 md:py-24 bg-black-deep">
+        <div className="container-custom">
+          <ScrollReveal>
+            <SectionHeader
+              title="Real Transformations"
+              subtitle="See what dedication and expert guidance can achieve. Slide to witness the change."
+            />
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 max-w-5xl mx-auto">
+            <ScrollReveal delay={100}>
+               <TransformationSlider beforeImage="https://placehold.co/800x1000/1a1a1a/gold?text=Before+1" afterImage="https://placehold.co/800x1000/1a1a1a/ffffff?text=After+1" />
+            </ScrollReveal>
+            <ScrollReveal delay={250}>
+               <TransformationSlider beforeImage="https://placehold.co/800x1000/1a1a1a/gold?text=Before+2" afterImage="https://placehold.co/800x1000/1a1a1a/ffffff?text=After+2" />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -255,7 +318,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ TESTIMONIALS ═══════════ */}
-      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated">
+      <section className="py-14 sm:py-18 md:py-24 bg-black-elevated overflow-hidden">
         <div className="container-custom">
           <ScrollReveal>
             <SectionHeader
@@ -263,15 +326,11 @@ export default function HomePage() {
               subtitle="Real stories from real people who transformed their lives at MR7 Fitness."
             />
           </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={testimonial.name} delay={index * 100}>
-                <TestimonialCard {...testimonial} />
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
+
+        <ScrollReveal delay={150}>
+           <TestimonialCarousel reviews={testimonials} />
+        </ScrollReveal>
       </section>
 
       {/* ═══════════ FINAL CTA ═══════════ */}

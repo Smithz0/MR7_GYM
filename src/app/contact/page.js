@@ -67,7 +67,7 @@ export default function ContactPage() {
       ),
       label: 'Visit Us',
       value: '45, Govindan Rd, Panneerselvam Nagar, West Mambalam, Chennai, Tamil Nadu 600033',
-      href: null,
+      href: 'https://www.google.com/maps/dir/?api=1&destination=MR7+UNISEX+FITNESS+45,+Govindan+Rd,+Panneerselvam+Nagar,+West+Mambalam,+Chennai,+Tamil+Nadu+600033',
     },
     {
       icon: (
@@ -310,19 +310,43 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="relative rounded-lg overflow-hidden border border-gray-700">
+            <a 
+              href="https://www.google.com/maps/dir/?api=1&destination=MR7+UNISEX+FITNESS+45,+Govindan+Rd,+Panneerselvam+Nagar,+West+Mambalam,+Chennai,+Tamil+Nadu+600033"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block rounded-xl overflow-hidden border border-gray-800 group h-[450px] bg-black shadow-2xl transition-all duration-500 hover:border-gold/30 hover:shadow-[0_0_40px_rgba(0,0,0,0.8)]"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8968!2d80.2259!3d13.0382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267e4e0f0b9c7%3A0x5e6e3c6f5e6e3c6f!2s45%2C%20Govindan%20Rd%2C%20Panneerselvam%20Nagar%2C%20West%20Mambalam%2C%20Chennai%2C%20Tamil%20Nadu%20600033!5e0!3m2!1sen!2sin!4v1618309849007!5m2!1sen!2sin"
                 width="100%"
-                height="450"
-                className="map-responsive"
-                style={{ border: 0, filter: 'grayscale(80%) invert(92%) contrast(83%)' }}
+                height="100%"
+                className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
+                style={{ border: 0, filter: 'grayscale(100%) invert(100%) contrast(85%) hue-rotate(180deg) brightness(85%)', transform: 'scale(1.2)' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="MR7 Fitness Location"
               />
-            </div>
+              
+              {/* Fade edges like Cult.fit vignette */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,_#0a0a0a_100%)] pointer-events-none"></div>
+
+              {/* Custom Map Pin Center */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 pointer-events-none transform transition-transform group-hover:-translate-y-[60%] group-hover:scale-110 duration-500">
+                <div className="w-14 h-14 bg-black-deep rounded-full border shadow-[0_0_25px_rgba(212,175,55,0.4)] border-gold/70 flex items-center justify-center relative">
+                  <img src="/images/logo.png" alt="MR7 Logo Pin" className="w-9 h-9 object-contain" />
+                </div>
+                {/* Pin Tip */}
+                <div className="w-4 h-4 bg-black-deep border-r border-b border-gold/70 transform rotate-45 -mt-2.5 z-0"></div>
+                {/* Floor Shadow */}
+                <div className="w-12 h-2.5 bg-black/90 rounded-full blur-[3px] mt-1.5 animate-pulse"></div>
+              </div>
+
+              {/* Click prompt overlay */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-black/80 backdrop-blur-md border border-gold/40 rounded-full text-gold text-sm font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-6 group-hover:translate-y-0 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                Click For Directions
+              </div>
+            </a>
           </ScrollReveal>
         </div>
       </section>
