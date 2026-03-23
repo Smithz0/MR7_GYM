@@ -9,6 +9,10 @@ export const metadata = {
   description:
     'MR7 Fitness is an exclusive, high-end fitness center offering modern equipment, expert trainers, and flexible membership plans. Transform your body and build your strength.',
   keywords: ['gym', 'fitness', 'personal training', 'membership', 'MR7 Fitness', 'premium gym'],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/images/logo.png', // Fallback for iOS using the main logo
+  },
   openGraph: {
     title: 'MR7 Fitness — Premium Gym & Fitness Center',
     description: 'Transform your body. Build your strength. Join the premium fitness experience at MR7 Fitness.',
